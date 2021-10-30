@@ -3,3 +3,4 @@ tools/
 *.png
 *.html
 *.xml
+.vscode/
