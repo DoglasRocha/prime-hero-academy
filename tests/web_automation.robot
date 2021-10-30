@@ -14,7 +14,7 @@ ${PRODUTO}      blouse
 
 *** Keywords ***
 Abrir Navegador
-    Open Browser    browser=${BROWSER}
+    Open Browser                    browser=${BROWSER}
     Maximize Browser Window
 
 Fechar Navegador
@@ -23,15 +23,15 @@ Fechar Navegador
 
 # Keywords utilizadas em mais de um cenário de teste
 Acessar a página home do site Automation Practice
-    Go To                   ${URL}
-    Title Should Be         My Store
+    Go To                           ${URL}
+    Title Should Be                 My Store
     Wait Until Element Is Visible   id=block_top_menu
 
 Digitar o nome do produto "${PRODUTO}" no campo de pesquisa
-    Input Text      id=search_query_top    ${PRODUTO}
+    Input Text                      id=search_query_top    ${PRODUTO}
 
 Clicar no botão pesquisar
-    Click Element   xpath=//*[@name='submit_search' and @type='submit']
+    Click Element                   xpath=//*[@name='submit_search' and @type='submit']
 
 # Teste 01
 Conferir se o produto "${PRODUTO}" foi listado no site
@@ -47,7 +47,7 @@ Conferir mensagem "No results were found for your search "itemNãoExistente""
 
 # Teste 03
 Passar o mouse por cima da categoria "Women" no menu principal superior de categorias
-    Mouse Over          xpath=//a[@title="Women"]
+    Mouse Over                      xpath=//a[@title="Women"]
 
 Clicar na sub categoria "Summer Dresses"
     Wait Until Element Is Visible   xpath=//a[@title="Summer Dresses"]
@@ -60,25 +60,37 @@ Conferir se os produtos da sub categoria "Summer Dresses" foram mostrados na pá
 
 # Teste 04
 Clicar em "Sign in"
-    Click Element       xpath=//a[@class="login" and @title="Log in to your customer account"]
+    Click Element                   xpath=//a[@class="login" and @title="Log in to your customer account"]
 
 Informar um e-mail válido
     Wait Until Element Is Visible   xpath=//input[@id="email_create" and @name="email_create"]
     Title Should Be                 Login - My Store
-    Input Text                      xpath=//input[@id="email_create" and @name="email_create"]   doglasfmr@gmail.com
+    Input Text                      xpath=//input[@id="email_create" and @name="email_create"]   rocha@doglas.com
 
 Clicar em "Create an account"
-    Click Element       xpath=//button[@id="SubmitCreate"]
+    Click Element                   xpath=//button[@id="SubmitCreate"]
 
 Preencher os dados obrigatórios
-    
+    Title Should Be                 Login - My Store
+    Wait Until Element Is Visible   xpath=//input[@id="id_gender1"]
+    Click Element                   xpath=//input[@id="id_gender1"]
+    Input Text                      xpath=//input[@id="customer_firstname"]     Doglas
+    Input Text                      xpath=//input[@id="customer_lastname"]      Rocha
+    Input Text                      xpath=//input[@id="passwd"]                 12345
+    Input Text                      xpath=//input[@id="address1"]               Baker Street
+    Input Text                      xpath=//input[@id="city"]                   London
+    Click Element                   xpath=//select[@id="id_state"]
+    Click Element                   xpath=//select[@id="id_state"]//option[@value="53"]
+    Input Text                      xpath=//input[@id="postcode"]               55555
+    Input Text                      xpath=//input[@id="phone_mobile"]           9999999999
 
 Submeter cadastro
-
+    Click Element                   xpath=//button[@id="submitAccount"]
 
 Conferir se o cadastro foi efetuado com sucesso
-
-
+    Title Should Be                 My account - My Store
+    Wait Until Element Is Visible   xpath=//ul[@class="myaccount-link-list"]//a[@title="Orders"]
+    Page Should Contain Element     xpath=//h1[@class="page-heading"]
 
 *** Test Case ***
 Caso de Teste 01: Pesquisar produto existente
@@ -104,7 +116,7 @@ Caso de Teste 03: Listar Produtos
     Clicar na sub categoria "Summer Dresses"
     Conferir se os produtos da sub categoria "Summer Dresses" foram mostrados na página
 
-Caso de Teste 04:
+Caso de Teste 04: Adicionar Cliente
     [Tags]      FOUR
 
     Acessar a página home do site Automation Practice
