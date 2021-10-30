@@ -16,6 +16,7 @@ ${PRODUTO}      blouse
 Abrir Navegador
     Open Browser                    browser=${BROWSER}
     Maximize Browser Window
+    Set Screenshot Directory        img/
 
 Fechar Navegador
     Capture Page Screenshot
@@ -65,7 +66,7 @@ E clicar em "Sign in"
 E informar um e-mail válido
     Wait Until Element Is Visible   xpath=//input[@id="email_create" and @name="email_create"]
     Title Should Be                 Login - My Store
-    Input Text                      xpath=//input[@id="email_create" and @name="email_create"]   novoemail.@doglasrocha.com
+    Input Text                      xpath=//input[@id="email_create" and @name="email_create"]   novo.email.dois@doglasrocha.com
 
 E clicar em "Create an account"
     Click Element                   xpath=//button[@id="SubmitCreate"]
