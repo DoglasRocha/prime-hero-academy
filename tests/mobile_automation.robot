@@ -47,3 +47,14 @@ Caso de Teste 01: Pesquisar canal “Prime Experts”
     E acessar o canal da Prime
     Quando clicar em Inscrever-se
     Então será apresentado como Inscrito
+
+Caso de Teste 02: Logar no YouTube
+    Logar no aplicativo com a conta "teste_doglas@gmail.com"
+    Entrar no menu "Explorar"
+    Usar swipe até o 10 item da tela
+    Clicar no vídeo
+
+Caso de Teste 03:
+    Entrar no menu "Explorar"
+    Usar swipe de tela até o 10 item da tela
+    Clicar no vídeo
