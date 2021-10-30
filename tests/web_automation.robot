@@ -65,7 +65,7 @@ Clicar em "Sign in"
 Informar um e-mail válido
     Wait Until Element Is Visible   xpath=//input[@id="email_create" and @name="email_create"]
     Title Should Be                 Login - My Store
-    Input Text                      xpath=//input[@id="email_create" and @name="email_create"]   rocha@doglas.com
+    Input Text                      xpath=//input[@id="email_create" and @name="email_create"]   novoemail@doglasrocha.com
 
 Clicar em "Create an account"
     Click Element                   xpath=//button[@id="SubmitCreate"]
