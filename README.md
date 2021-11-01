@@ -1,12 +1,12 @@
 # Prime Hero Academy :computer::rocket:
 
-* Olá! Neste repositório você encontrará os projetos desenvolvidos no curso Prime Hero Academy! 
+* Olá! Neste repositório você encontrará os projetos desenvolvidos no curso Prime Hero Academy! :happy:
 
-* O Prime Hero Academy teve como objetivo introduzir seus alunos ao universo QA, ou seja, à qualidade de software. 
+* O Prime Hero Academy teve como objetivo introduzir seus alunos ao universo QA, ou seja, à qualidade de software. :white_check_mark:
 
-* Nele, vários aspectos teóricos foram abordados, assim como aspectos práticos.
+* Nele, vários aspectos teóricos foram abordados, assim como aspectos práticos. :book::wrench:
 
-* Ao total, foram dois projetos desenvolvidos, um de automação Web e outro de automação Mobile.
+* Ao total, foram dois projetos desenvolvidos, um de automação Web e outro de automação Mobile. :desktop_computer::vibration_mode:
 
 * Para visualizar esses testes, é necessário fazer a instalação de algumas ferramentas:
 
