@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation       Aqui neste arquivo estarão presentes os cenários e keywords que dizem respeito
-...                 a automação mobile.
+...                 a automação mobi
 
 Library             AppiumLibrary
 
