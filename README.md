@@ -1,6 +1,6 @@
 # Prime Hero Academy :computer::rocket:
 
-* Olá! Neste repositório você encontrará os projetos desenvolvidos no curso Prime Hero Academy! :happy:
+* Olá! Neste repositório você encontrará os projetos desenvolvidos no curso Prime Hero Academy! :smiley:
 
 * O Prime Hero Academy teve como objetivo introduzir seus alunos ao universo QA, ou seja, à qualidade de software. :white_check_mark:
 
