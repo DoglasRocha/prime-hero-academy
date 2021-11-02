@@ -3,6 +3,7 @@ Documentation   Aqui estão presentes os testes Web do curso Prime Hero.
 ...             Para eles, será utilizada a lib Selenium.
 
 Library         SeleniumLibrary
+Library         FakerLibrary
 
 Test Setup      Abrir Navegador
 Test Teardown   Fechar Navegador
@@ -10,7 +11,7 @@ Test Teardown   Fechar Navegador
 *** Variables ***
 ${URL}          http://automationpractice.com/index.php
 ${BROWSER}      chrome
-${PRODUTO}      blouse
+${PRODUTO}      blouse   
 
 *** Keywords ***
 Abrir Navegador
@@ -64,26 +65,31 @@ E clicar em "Sign in"
     Click Element                   xpath=//a[@class="login" and @title="Log in to your customer account"]
 
 E informar um e-mail válido
+    ${EMAIL} =      FakerLibrary.Email
     Wait Until Element Is Visible   xpath=//input[@id="email_create" and @name="email_create"]
     Title Should Be                 Login - My Store
-    Input Text                      xpath=//input[@id="email_create" and @name="email_create"]   novo.email.tres@doglasrocha.com
+    Input Text                      xpath=//input[@id="email_create" and @name="email_create"]      ${EMAIL}
 
 E clicar em "Create an account"
     Click Element                   xpath=//button[@id="SubmitCreate"]
 
 E preencher os dados obrigatórios
+    ${NAME} =                       FakerLibrary.Name
+    ${LAST_NAME} =                  FakerLibrary.Last Name
+    ${PHONE_NUMBER} =               FakerLibrary.Phone Number
+
     Title Should Be                 Login - My Store
     Wait Until Element Is Visible   xpath=//input[@id="id_gender1"]
     Click Element                   xpath=//input[@id="id_gender1"]
-    Input Text                      xpath=//input[@id="customer_firstname"]     Doglas
-    Input Text                      xpath=//input[@id="customer_lastname"]      Rocha
+    Input Text                      xpath=//input[@id="customer_firstname"]     ${NAME}
+    Input Text                      xpath=//input[@id="customer_lastname"]      ${LAST_NAME}
     Input Text                      xpath=//input[@id="passwd"]                 12345
     Input Text                      xpath=//input[@id="address1"]               Baker Street
     Input Text                      xpath=//input[@id="city"]                   London
     Click Element                   xpath=//select[@id="id_state"]
     Click Element                   xpath=//select[@id="id_state"]//option[@value="53"]
     Input Text                      xpath=//input[@id="postcode"]               55555
-    Input Text                      xpath=//input[@id="phone_mobile"]           9999999999
+    Input Text                      xpath=//input[@id="phone_mobile"]           ${PHONE_NUMBER}
 
 Quando submeter cadastro
     Click Element                   xpath=//button[@id="submitAccount"]
